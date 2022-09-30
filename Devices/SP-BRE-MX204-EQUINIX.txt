@@ -1,0 +1,1632 @@
+#-------------------------------------- Backup Gerado = 30/09/2022 - 02:30 --------------------------------------#
+show configuration | display set | no-more 
+set version 18.1R3-S4.2
+set system host-name SP-BRE-MX204-EQUINIX
+set system time-zone America/Sao_Paulo
+set system no-multicast-echo
+set system no-redirects
+set system no-ping-record-route
+set system no-ping-time-stamp
+set system arp aging-timer 240
+set system internet-options path-mtu-discovery
+set system internet-options tcp-drop-synfin-set
+set system internet-options ipv6-path-mtu-discovery
+set system internet-options no-tcp-reset drop-all-tcp
+set system authentication-order radius
+set system ports console type vt100
+set system ports auxiliary disable
+set system root-authentication encrypted-password "$sha1$19881$wDg4DpGK$oGdrWzOLiplkaBY3h8WZ0JibS5Qk"
+set system name-server 177.8.8.8
+set system radius-server 189.76.208.98 port 1840
+set system radius-server 189.76.208.98 accounting-port 1841
+set system radius-server 189.76.208.98 secret "$9$zgTE3A0IEylvWO1-VY2UDCtu"
+set system radius-server 189.76.208.98 timeout 15
+set system radius-server 189.76.208.98 source-address 189.76.208.253
+set system accounting events login
+set system accounting events change-log
+set system accounting events interactive-commands
+set system accounting destination radius
+set system login retry-options tries-before-disconnect 5
+set system login retry-options backoff-threshold 3
+set system login retry-options backoff-factor 10
+set system login retry-options lockout-period 2
+set system login user OP full-name "Usuario Operador"
+set system login user OP uid 2008
+set system login user OP class operator
+set system login user RO full-name "Usuario Read Only"
+set system login user RO uid 2009
+set system login user RO class read-only
+set system login user SU full-name "Usuario Super User"
+set system login user SU uid 2010
+set system login user SU class super-user
+set system login user wkve full-name "Usuario Wkve Telecom"
+set system login user wkve uid 2002
+set system login user wkve class super-user
+set system login user wkve authentication encrypted-password "$sha1$19542$O1d.17HS$iirR/mk/ql4RtKtaQsDF2h4trRpj"
+set system login password format sha1
+set system services ssh root-login deny
+set system services ssh no-tcp-forwarding
+set system services ssh protocol-version v2
+set system services ssh connection-limit 20
+set system services ssh rate-limit 20
+set system syslog user * any emergency
+set system syslog host 189.76.208.85 any notice
+set system syslog host 189.76.208.85 kernel info
+set system syslog host 189.76.208.85 firewall info
+set system syslog host 189.76.208.85 pfe info
+set system syslog host 189.76.208.85 interactive-commands any
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file messages match "!(.*mld6_input.*)"
+set system syslog file interactive-commands interactive-commands any
+set system ntp server 189.76.208.10
+set system ntp source-address 189.76.208.253
+set chassis aggregated-devices ethernet device-count 8
+set chassis fpc 0 pic 0 tunnel-services
+set chassis fpc 0 pic 0 port 0 speed 100g
+set chassis fpc 0 pic 0 port 1 speed 100g
+set chassis fpc 0 pic 0 port 2 speed 40g
+set chassis fpc 0 pic 0 port 3 speed 40g
+set chassis fpc 0 pic 1 tunnel-services
+set chassis fpc 0 pic 1 port 0 speed 10g
+set chassis fpc 0 pic 1 port 1 speed 10g
+set chassis fpc 0 pic 1 port 2 speed 10g
+set chassis fpc 0 pic 1 port 3 speed 10g
+set chassis fpc 0 pic 1 port 4 speed 10g
+set chassis fpc 0 pic 1 port 5 speed 10g
+set chassis fpc 0 pic 1 port 6 speed 10g
+set chassis fpc 0 pic 1 port 7 speed 10g
+set chassis fpc 0 sampling-instance samplicator
+set chassis fpc 0 inline-services flow-table-size ipv4-flow-table-size 10
+set chassis fpc 0 inline-services flow-table-size ipv6-flow-table-size 4
+set chassis alarm management-ethernet link-down ignore
+set chassis network-services enhanced-ip
+set services flow-monitoring version-ipfix template ipv4 flow-active-timeout 60
+set services flow-monitoring version-ipfix template ipv4 flow-inactive-timeout 30
+set services flow-monitoring version-ipfix template ipv4 template-refresh-rate packets 48000
+set services flow-monitoring version-ipfix template ipv4 template-refresh-rate seconds 30
+set services flow-monitoring version-ipfix template ipv4 option-refresh-rate packets 48000
+set services flow-monitoring version-ipfix template ipv4 option-refresh-rate seconds 30
+set services flow-monitoring version-ipfix template ipv4 ipv4-template
+set services flow-monitoring version-ipfix template ipv6 flow-active-timeout 60
+set services flow-monitoring version-ipfix template ipv6 flow-inactive-timeout 30
+set services flow-monitoring version-ipfix template ipv6 template-refresh-rate packets 1000
+set services flow-monitoring version-ipfix template ipv6 template-refresh-rate seconds 10
+set services flow-monitoring version-ipfix template ipv6 option-refresh-rate packets 1000
+set services flow-monitoring version-ipfix template ipv6 option-refresh-rate seconds 10
+set services flow-monitoring version-ipfix template ipv6 ipv6-template
+set services flow-monitoring version-ipfix template ipv6 flow-key flow-direction
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp probe-type icmp-ping
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp target address 172.30.0.142
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp probe-count 15
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp probe-interval 1
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp test-interval 15
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp source-address 172.30.0.141
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp data-size 1400
+set services rpm probe RPM_SPO-BHE_VIA_CENTURY test icmp thresholds successive-loss 2
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp probe-type icmp-ping
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp target address 189.76.223.105
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp probe-count 15
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp probe-interval 1
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp test-interval 15
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp source-address 189.76.223.106
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp data-size 1400
+set services rpm probe RPM_SPO-GVS_VIA_ELETRONET test icmp thresholds successive-loss 2
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp probe-type icmp-ping
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp target address 189.76.223.101
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp probe-count 15
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp probe-interval 1
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp test-interval 15
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp source-address 189.76.223.102
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp data-size 1400
+set services rpm probe RPM_SPO-BHE_VIA_ALGAR test icmp thresholds successive-loss 2
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp probe-type icmp-ping
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp target address 172.30.0.254
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp probe-count 15
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp probe-interval 1
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp test-interval 15
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp source-address 172.30.0.253
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp data-size 1400
+set services rpm probe RPM_SPO-PUP_VIA_WIRELINK test icmp thresholds successive-loss 2
+set interfaces et-0/0/2 description "INTERFACE 40Gb - SP-BRE-QFX5100-EQUINIX - et-0/0/48"
+set interfaces et-0/0/2 ether-options 802.3ad ae1
+set interfaces et-0/0/2 gigether-options fec none
+set interfaces et-0/0/3 description "INTERFACE 40Gb - SP-BRE-QFX5100-EQUINIX - et-0/0/49"
+set interfaces et-0/0/3 ether-options 802.3ad ae1
+set interfaces et-0/0/3 gigether-options fec none
+set interfaces xe-0/1/0 description "INTERFACE 10Gb - SP-BRE-QFX5100-EQUINIX - xe-0/0/0"
+set interfaces xe-0/1/1 description "INTERFACE 10Gb - SP-BRE-QFX5100-EQUINIX - xe-0/0/1"
+set interfaces xe-0/1/2 description "INTERFACE 10Gb - CLEAR CHANNEL CTBC - BHE"
+set interfaces xe-0/1/2 flexible-vlan-tagging
+set interfaces xe-0/1/2 mtu 9000
+set interfaces xe-0/1/2 encapsulation flexible-ethernet-services
+set interfaces xe-0/1/2 unit 4005 description "VLAN 4005 - MG-BHE-MX80-CURRAL"
+set interfaces xe-0/1/2 unit 4005 vlan-id 4005
+set interfaces xe-0/1/2 unit 4005 family inet mtu 1600
+set interfaces xe-0/1/2 unit 4005 family inet address 189.76.223.102/30
+set interfaces xe-0/1/2 unit 4005 family inet6 mtu 1600
+set interfaces xe-0/1/2 unit 4005 family inet6 address 2804:14:0:1::102/126
+set interfaces xe-0/1/2 unit 4005 family mpls mtu 1600
+set interfaces xe-0/1/3 description "Transit: INTERFACE 10Gb - UPLINK G8 TELECOM"
+set interfaces xe-0/1/3 mtu 9000
+set interfaces xe-0/1/3 unit 0 description "VLAN 0 - UPLINK G8"
+set interfaces xe-0/1/3 unit 0 family inet mtu 1500
+set interfaces xe-0/1/3 unit 0 family inet sampling input
+set interfaces xe-0/1/3 unit 0 family inet address 179.96.88.22/30
+set interfaces xe-0/1/3 unit 0 family inet6 mtu 1500
+set interfaces xe-0/1/3 unit 0 family inet6 sampling input
+set interfaces xe-0/1/3 unit 0 family inet6 address 2804:39c:f002::3/127
+set interfaces xe-0/1/4 description "INTERFACE 10Gb - ATM IPv4/IPv6 - IX-SP"
+set interfaces xe-0/1/4 gigether-options 802.3ad ae4
+set interfaces xe-0/1/5 description "INTERFACE 10Gb - GOOGLE S.A - PNI"
+set interfaces xe-0/1/5 gigether-options 802.3ad ae6
+set interfaces xe-0/1/6 description "INTERFACE 10Gb - FACEBOOK S.A - PNI1"
+set interfaces xe-0/1/6 gigether-options 802.3ad ae5
+set interfaces xe-0/1/7 description "INTERFACE 10Gb - FACEBOOK S.A - PNI2"
+set interfaces xe-0/1/7 gigether-options 802.3ad ae8
+set interfaces ae1 description "LACP 40G - SP-BRE-QFX5100-EQUINIX"
+set interfaces ae1 flexible-vlan-tagging
+set interfaces ae1 mtu 9000
+set interfaces ae1 encapsulation flexible-ethernet-services
+set interfaces ae1 aggregated-ether-options minimum-links 1
+set interfaces ae1 aggregated-ether-options link-speed 40g
+set interfaces ae1 aggregated-ether-options lacp active
+set interfaces ae1 aggregated-ether-options lacp periodic fast
+set interfaces ae1 unit 1021 description "VLAN 1021 - PA-PUP-S6730-WKVETELECOM"
+set interfaces ae1 unit 1021 vlan-id 1021
+set interfaces ae1 unit 1021 family inet mtu 1600
+set interfaces ae1 unit 1021 family inet address 172.30.0.253/30
+set interfaces ae1 unit 1021 family inet6 mtu 1600
+set interfaces ae1 unit 1021 family mpls mtu 1600
+set interfaces ae1 unit 2000 description "VLAN 2000 - SP-BRE-QFX5100-EQUINIX"
+set interfaces ae1 unit 2000 vlan-id 2000
+set interfaces ae1 unit 2000 family inet mtu 1500
+set interfaces ae1 unit 2000 family inet address 172.16.100.249/30
+set interfaces ae1 unit 3810 description "VLAN 3810 - MG-GVS-MX80-WKVE VIA ELETRONET"
+set interfaces ae1 unit 3810 vlan-id 3810
+set interfaces ae1 unit 3810 family inet mtu 1600
+set interfaces ae1 unit 3810 family inet address 189.76.223.106/30
+set interfaces ae1 unit 3810 family inet6 mtu 1600
+set interfaces ae1 unit 3810 family inet6 address 2804:14:0:1::a/126
+set interfaces ae1 unit 3810 family mpls mtu 1600
+set interfaces ae1 unit 4004 description "VLAN 4004 - MG-BHE-MX80-CURRAL"
+set interfaces ae1 unit 4004 vlan-id 4004
+set interfaces ae1 unit 4004 family inet mtu 1600
+set interfaces ae1 unit 4004 family inet address 172.30.0.141/30
+set interfaces ae1 unit 4004 family inet6 mtu 1600
+set interfaces ae1 unit 4004 family inet6 address 2804:14:0:1::10a/126
+set interfaces ae1 unit 4004 family mpls mtu 1600
+set interfaces ae4 description "Peering: LACP - ATM IPv4/IPv6 - IX-SP"
+set interfaces ae4 flexible-vlan-tagging
+set interfaces ae4 mtu 9000
+set interfaces ae4 encapsulation flexible-ethernet-services
+set interfaces ae4 aggregated-ether-options minimum-links 1
+set interfaces ae4 aggregated-ether-options link-speed 10g
+set interfaces ae4 aggregated-ether-options lacp active
+set interfaces ae4 aggregated-ether-options lacp periodic fast
+set interfaces ae4 unit 2510 description "VLAN 2510 - ATM IPv4 - IX/SP"
+set interfaces ae4 unit 2510 vlan-id 2510
+set interfaces ae4 unit 2510 family inet mtu 1500
+set interfaces ae4 unit 2510 family inet policer arp ARP-Policer
+set interfaces ae4 unit 2510 family inet sampling input
+set interfaces ae4 unit 2510 family inet address 187.16.208.17/20
+set interfaces ae4 unit 2511 description "VLAN 2511 - ATM IPv6 - IX/SP"
+set interfaces ae4 unit 2511 vlan-id 2511
+set interfaces ae4 unit 2511 family inet6 mtu 1500
+set interfaces ae4 unit 2511 family inet6 sampling input
+set interfaces ae4 unit 2511 family inet6 address 2001:12f8::208:17/64
+set interfaces ae4 unit 3646 description "Transit: VLAN 3646 - UPLINK LINK BRASIL - IX/SP"
+set interfaces ae4 unit 3646 vlan-id 3646
+set interfaces ae4 unit 3646 family inet mtu 1500
+set interfaces ae4 unit 3646 family inet sampling input
+set interfaces ae4 unit 3646 family inet address 131.255.57.79/31
+set interfaces ae4 unit 3646 family inet6 address 2804:7898:5000::a:47/127
+set interfaces ae5 description "Peering: LACP - FACEBOOK S.A - PNI1"
+set interfaces ae5 mtu 9000
+set interfaces ae5 aggregated-ether-options minimum-links 1
+set interfaces ae5 aggregated-ether-options link-speed 10g
+set interfaces ae5 aggregated-ether-options lacp active
+set interfaces ae5 aggregated-ether-options lacp periodic fast
+set interfaces ae5 unit 0 family inet mtu 1500
+set interfaces ae5 unit 0 family inet sampling input
+set interfaces ae5 unit 0 family inet sampling output
+set interfaces ae5 unit 0 family inet address 179.124.225.249/30
+set interfaces ae5 unit 0 family inet6 mtu 1500
+set interfaces ae5 unit 0 family inet6 sampling input
+set interfaces ae5 unit 0 family inet6 sampling output
+set interfaces ae5 unit 0 family inet6 address 2804:14:0:100::102/127
+set interfaces ae6 description "Peering: LACP - GOOGLE S.A - PNI"
+set interfaces ae6 mtu 9000
+set interfaces ae6 aggregated-ether-options minimum-links 1
+set interfaces ae6 aggregated-ether-options link-speed 10g
+set interfaces ae6 aggregated-ether-options lacp active
+set interfaces ae6 aggregated-ether-options lacp periodic fast
+set interfaces ae6 unit 0 family inet mtu 1500
+set interfaces ae6 unit 0 family inet sampling input
+set interfaces ae6 unit 0 family inet sampling output
+set interfaces ae6 unit 0 family inet address 179.124.225.246/30
+set interfaces ae6 unit 0 family inet6 mtu 1500
+set interfaces ae6 unit 0 family inet6 sampling input
+set interfaces ae6 unit 0 family inet6 sampling output
+set interfaces ae6 unit 0 family inet6 address 2804:14:0:100::104/127
+set interfaces ae8 description "Peering: LACP - FACEBOOK S.A - PNI2"
+set interfaces ae8 mtu 9000
+set interfaces ae8 aggregated-ether-options minimum-links 1
+set interfaces ae8 aggregated-ether-options link-speed 10g
+set interfaces ae8 aggregated-ether-options lacp active
+set interfaces ae8 aggregated-ether-options lacp periodic fast
+set interfaces ae8 unit 0 family inet mtu 1500
+set interfaces ae8 unit 0 family inet sampling input
+set interfaces ae8 unit 0 family inet sampling output
+set interfaces ae8 unit 0 family inet address 157.240.76.169/31
+set interfaces ae8 unit 0 family inet6 mtu 1500
+set interfaces ae8 unit 0 family inet6 sampling input
+set interfaces ae8 unit 0 family inet6 sampling output
+set interfaces ae8 unit 0 family inet6 address 2620:0:1cff:dead:beee::1177/127
+set interfaces fxp0 description "GERENCIA LOCAL - JUNIPER MX204"
+set interfaces fxp0 unit 0 family inet address 192.168.1.1/24
+set interfaces lo0 unit 255 family inet primary
+set interfaces lo0 unit 255 family inet filter input PROTECT-RE
+set interfaces lo0 unit 255 family inet address 189.76.208.253/32
+set interfaces lo0 unit 255 family inet6 filter input PROTECTv6-RE
+set interfaces lo0 unit 255 family inet6 address 2804:14::253/128
+set snmp description SP-BRE-MX204-EQUINIX
+set snmp contact "cgr@wkve.com.br"
+set snmp view pingMIB oid .1.3.6.1.2.1.80 include
+set snmp community cilbup authorization read-only
+set snmp community cilbup clients 189.76.208.0/24
+set snmp community pinger view pingMIB
+set snmp community pinger authorization read-write
+set snmp community pinger clients 189.76.208.80/32
+set forwarding-options sampling instance samplicator input rate 5000
+set forwarding-options sampling instance samplicator input run-length 0
+set forwarding-options sampling instance samplicator input max-packets-per-second 10000
+set forwarding-options sampling instance samplicator family inet output flow-server 189.76.208.10 port 9996
+set forwarding-options sampling instance samplicator family inet output flow-server 189.76.208.10 autonomous-system-type origin
+set forwarding-options sampling instance samplicator family inet output flow-server 189.76.208.10 no-local-dump
+set forwarding-options sampling instance samplicator family inet output flow-server 189.76.208.10 version-ipfix template ipv4
+set forwarding-options sampling instance samplicator family inet output inline-jflow source-address 189.76.208.253
+set forwarding-options sampling instance samplicator family inet6 output flow-server 189.76.208.10 port 9996
+set forwarding-options sampling instance samplicator family inet6 output flow-server 189.76.208.10 autonomous-system-type origin
+set forwarding-options sampling instance samplicator family inet6 output flow-server 189.76.208.10 no-local-dump
+set forwarding-options sampling instance samplicator family inet6 output flow-server 189.76.208.10 version-ipfix template ipv6
+set forwarding-options sampling instance samplicator family inet6 output inline-jflow source-address 189.76.208.253
+set routing-options rib inet6.0 aggregate defaults discard
+set routing-options aggregate defaults discard
+set routing-options protect core
+set routing-options router-id 189.76.208.253
+set routing-options autonomous-system 28360
+set routing-options forwarding-table export ECMP
+set protocols rsvp load-balance bandwidth
+set protocols rsvp interface xe-0/1/2.4005 bandwidth 3584000000
+set protocols rsvp interface ae1.4004 bandwidth 7168000000
+set protocols rsvp interface ae1.3810 bandwidth 1g
+set protocols rsvp interface ae1.1021 bandwidth 7168000000
+set protocols rsvp interface fxp0.0 disable
+set protocols mpls statistics file auto-bw
+set protocols mpls statistics file size 10m
+set protocols mpls statistics interval 10
+set protocols mpls statistics auto-bandwidth
+set protocols mpls traffic-engineering mpls-forwarding
+set protocols mpls ipv6-tunneling
+set protocols mpls expand-loose-hop
+set protocols mpls label-switched-path MG-NNE-ACX2100-NANUQUE-LSP template
+set protocols mpls label-switched-path MG-NNE-ACX2100-NANUQUE-LSP priority 6 6
+set protocols mpls label-switched-path MG-NNE-ACX2100-NANUQUE-LSP entropy-label
+set protocols mpls label-switched-path MG-NNE-ACX2100-NANUQUE-LSP least-fill
+set protocols mpls label-switched-path MG-NNE-ACX2100-NANUQUE-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-NNE-ACX2100-NANUQUE-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-NNE-ACX2100-NANUQUE-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path MG-CCH-ACX2100-DERRIBADINHA-LSP template
+set protocols mpls label-switched-path MG-CCH-ACX2100-DERRIBADINHA-LSP priority 6 6
+set protocols mpls label-switched-path MG-CCH-ACX2100-DERRIBADINHA-LSP entropy-label
+set protocols mpls label-switched-path MG-CCH-ACX2100-DERRIBADINHA-LSP least-fill
+set protocols mpls label-switched-path MG-CCH-ACX2100-DERRIBADINHA-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-CCH-ACX2100-DERRIBADINHA-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-CCH-ACX2100-DERRIBADINHA-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path MG-IMR-ACX2200-SERRANEGRA-LSP template
+set protocols mpls label-switched-path MG-IMR-ACX2200-SERRANEGRA-LSP priority 6 6
+set protocols mpls label-switched-path MG-IMR-ACX2200-SERRANEGRA-LSP entropy-label
+set protocols mpls label-switched-path MG-IMR-ACX2200-SERRANEGRA-LSP least-fill
+set protocols mpls label-switched-path MG-IMR-ACX2200-SERRANEGRA-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-IMR-ACX2200-SERRANEGRA-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-IMR-ACX2200-SERRANEGRA-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path BA-IBP-ACX2100-IBIRAPUA-LSP template
+set protocols mpls label-switched-path BA-IBP-ACX2100-IBIRAPUA-LSP priority 6 6
+set protocols mpls label-switched-path BA-IBP-ACX2100-IBIRAPUA-LSP entropy-label
+set protocols mpls label-switched-path BA-IBP-ACX2100-IBIRAPUA-LSP least-fill
+set protocols mpls label-switched-path BA-IBP-ACX2100-IBIRAPUA-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path BA-IBP-ACX2100-IBIRAPUA-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path BA-IBP-ACX2100-IBIRAPUA-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP template
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP priority 6 6
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP entropy-label
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP least-fill
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP inter-domain
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP template
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP priority 6 6
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP entropy-label
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP least-fill
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP inter-domain
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path PA-BJM-ACX2100-BREJOMEIO-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path MG-CGA-ACX2100-DETEL-LSP template
+set protocols mpls label-switched-path MG-CGA-ACX2100-DETEL-LSP priority 6 6
+set protocols mpls label-switched-path MG-CGA-ACX2100-DETEL-LSP entropy-label
+set protocols mpls label-switched-path MG-CGA-ACX2100-DETEL-LSP least-fill
+set protocols mpls label-switched-path MG-CGA-ACX2100-DETEL-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-CGA-ACX2100-DETEL-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-CGA-ACX2100-DETEL-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP template
+set protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP priority 6 6
+set protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP entropy-label
+set protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP least-fill
+set protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP auto-bandwidth minimum-bandwidth 100m
+deactivate protocols mpls label-switched-path MG-BHE-MX104-CURRAL-LSP
+set protocols mpls label-switched-path MG-MNN-ACX2100-MANTENA-LSP template
+set protocols mpls label-switched-path MG-MNN-ACX2100-MANTENA-LSP priority 6 6
+set protocols mpls label-switched-path MG-MNN-ACX2100-MANTENA-LSP entropy-label
+set protocols mpls label-switched-path MG-MNN-ACX2100-MANTENA-LSP least-fill
+set protocols mpls label-switched-path MG-MNN-ACX2100-MANTENA-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-MNN-ACX2100-MANTENA-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-MNN-ACX2100-MANTENA-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path MG-OVM-ACX2200-PRATINHA-LSP template
+set protocols mpls label-switched-path MG-OVM-ACX2200-PRATINHA-LSP priority 6 6
+set protocols mpls label-switched-path MG-OVM-ACX2200-PRATINHA-LSP entropy-label
+set protocols mpls label-switched-path MG-OVM-ACX2200-PRATINHA-LSP least-fill
+set protocols mpls label-switched-path MG-OVM-ACX2200-PRATINHA-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-OVM-ACX2200-PRATINHA-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-OVM-ACX2200-PRATINHA-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP template
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP priority 6 6
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP entropy-label
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP least-fill
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP inter-domain
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-GVS-MX80-WKVE-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path MG-MPL-ACX2100-PALMITAL-LSP template
+set protocols mpls label-switched-path MG-MPL-ACX2100-PALMITAL-LSP priority 6 6
+set protocols mpls label-switched-path MG-MPL-ACX2100-PALMITAL-LSP entropy-label
+set protocols mpls label-switched-path MG-MPL-ACX2100-PALMITAL-LSP least-fill
+set protocols mpls label-switched-path MG-MPL-ACX2100-PALMITAL-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path MG-MPL-ACX2100-PALMITAL-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path MG-MPL-ACX2100-PALMITAL-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP template
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP priority 6 6
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP entropy-label
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP least-fill
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP inter-domain
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path PA-MBA-ACX2100-MORADANOVA-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP template
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP priority 6 6
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP entropy-label
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP least-fill
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP inter-domain
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP auto-bandwidth minimum-bandwidth 50m
+deactivate protocols mpls label-switched-path PA-PUP-ACX2100-WKVETELECOM-LSP
+set protocols mpls label-switched-path PA-PUP-MK-WKVETESTE-LSP1 to 177.8.17.230
+set protocols mpls label-switched-path PA-PUP-MK-WKVETESTE-LSP1 no-cspf
+set protocols mpls label-switched-path PA-PUP-MK-WKVETESTE-LSP1 priority 3 3
+set protocols mpls label-switched-path PA-PUP-MK-WKVETESTE-LSP1 primary teste
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP template
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP priority 6 6
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP entropy-label
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP least-fill
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP inter-domain
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path PA-PUP-S6730-WKVETELECOM-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP template
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP priority 6 6
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP entropy-label
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP least-fill
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP inter-domain
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path PA-CJS-ACX2100-GUANABARA-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP template
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP priority 6 6
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP entropy-label
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP least-fill
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP inter-domain
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path PA-PUP-NE8000-BRAS-LSP auto-bandwidth minimum-bandwidth 50m
+set protocols mpls label-switched-path LSP-TEMPLATE-PA template
+set protocols mpls label-switched-path LSP-TEMPLATE-PA priority 6 6
+set protocols mpls label-switched-path LSP-TEMPLATE-PA entropy-label
+set protocols mpls label-switched-path LSP-TEMPLATE-PA least-fill
+set protocols mpls label-switched-path LSP-TEMPLATE-PA inter-domain
+set protocols mpls label-switched-path LSP-TEMPLATE-PA auto-bandwidth adjust-interval 300
+set protocols mpls label-switched-path LSP-TEMPLATE-PA auto-bandwidth adjust-threshold 5
+set protocols mpls label-switched-path LSP-TEMPLATE-PA auto-bandwidth minimum-bandwidth 1k
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT label-switched-path-template MG-NNE-ACX2100-NANUQUE-LSP
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT to 189.76.208.220
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging minimum-member-lsps 4
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-NNE-ACX2100-NANUQUE-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT label-switched-path-template MG-CCH-ACX2100-DERRIBADINHA-LSP
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT to 189.76.208.221
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging minimum-member-lsps 4
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-CCH-ACX2100-DERRIBADINHA-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT label-switched-path-template MG-IMR-ACX2200-SERRANEGRA-LSP
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT to 189.76.208.203
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-IMR-ACX2200-SERRANEGRA-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT label-switched-path-template BA-IBP-ACX2100-IBIRAPUA-LSP
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT to 172.31.254.219
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging minimum-member-lsps 4
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path BA-IBP-ACX2100-IBIRAPUA-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT label-switched-path-template PA-CJS-ACX2100-NUCLEOURBANO-LSP
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT to 172.31.255.246
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-NUCLEOURBANO-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT label-switched-path-template PA-BJM-ACX2100-BREJOMEIO-LSP
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT to 177.8.17.250
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging minimum-member-lsps 4
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-BJM-ACX2100-BREJOMEIO-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT label-switched-path-template MG-CGA-ACX2100-DETEL-LSP
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT to 189.76.208.208
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-CGA-ACX2100-DETEL-LSP-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT label-switched-path-template MG-MNN-ACX2100-MANTENA-LSP
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT to 189.76.208.190
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-MNN-ACX2100-MANTENA-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT label-switched-path-template MG-OVM-ACX2200-PRATINHA-LSP
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT to 189.76.208.222
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-OVM-ACX2200-PRATINHA-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT label-switched-path-template MG-GVS-MX80-WKVE-LSP
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT to 189.76.208.249
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging maximum-member-lsps 20
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging splitting-bandwidth 1g
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging merging-bandwidth 500m
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging maximum-signaling-bandwidth 750m
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-GVS-MX80-WKVE-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT label-switched-path-template MG-MPL-ACX2100-PALMITAL-LSP
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT to 189.76.208.198
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path MG-MPL-ACX2100-PALMITAL-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT label-switched-path-template PA-MBA-ACX2100-MORADANOVA-LSP
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT to 177.8.16.254
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging maximum-member-lsps 20
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-MBA-ACX2100-MORADANOVA-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT label-switched-path-template PA-PUP-ACX2100-WKVETELECOM-LSP
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT to 177.8.16.255
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging maximum-member-lsps 20
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging splitting-bandwidth 1g
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging merging-bandwidth 500m
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging maximum-signaling-bandwidth 750m
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT splitting-merging sampling use-percentile 90
+deactivate protocols mpls container-label-switched-path PA-PUP-ACX2100-WKVETELECOM-CNT
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT label-switched-path-template PA-PUP-S6730-WKVETELECOM-LSP
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT to 177.8.17.255
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging maximum-member-lsps 20
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging splitting-bandwidth 1g
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging merging-bandwidth 500m
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging maximum-signaling-bandwidth 750m
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-PUP-S6730-WKVETELECOM-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT label-switched-path-template PA-CJS-ACX2100-GUANABARA-LSP
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT to 177.8.17.242
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-CJS-ACX2100-GUANABARA-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT label-switched-path-template PA-PUP-NE8000-BRAS-LSP
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT to 172.31.255.254
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging splitting-bandwidth 200m
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging merging-bandwidth 100m
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging maximum-signaling-bandwidth 175m
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-PUP-NE8000-BRAS-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT label-switched-path-template LSP-TEMPLATE-PA
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT to 172.31.255.245
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging splitting-bandwidth 100m
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging merging-bandwidth 50m
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging maximum-signaling-bandwidth 75m
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-CNAA-ACX2100-WKVETELECOM-CNT splitting-merging sampling use-percentile 90
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT label-switched-path-template LSP-TEMPLATE-PA
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT to 172.31.255.255
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging maximum-member-lsps 10
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging minimum-member-lsps 2
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging splitting-bandwidth 200m
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging merging-bandwidth 100m
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging maximum-signaling-bandwidth 175m
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging normalization normalize-interval 1200
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging normalization failover-normalization
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging normalization no-incremental-normalize
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging sampling cut-off-threshold 1
+set protocols mpls container-label-switched-path PA-PUP-S6730H-WKVETELECOM-CNT splitting-merging sampling use-percentile 90
+set protocols mpls path ctbc
+set protocols mpls path teste 177.8.17.230 loose
+set protocols mpls interface lo0.255
+set protocols mpls interface xe-0/1/2.4005
+set protocols mpls interface ae1.4004
+set protocols mpls interface ae1.3810
+set protocols mpls interface ae1.1021
+set protocols mpls interface fxp0.0 disable
+set protocols bgp path-selection cisco-non-deterministic
+set protocols bgp group iBGP-FULLROUTING type internal
+set protocols bgp group iBGP-FULLROUTING local-address 189.76.208.253
+set protocols bgp group iBGP-FULLROUTING advertise-inactive
+set protocols bgp group iBGP-FULLROUTING export OUT-iBGP-IPv4-FULLROUTING
+set protocols bgp group iBGP-FULLROUTING peer-as 28360
+set protocols bgp group iBGP-FULLROUTING neighbor 189.76.208.254 description "PEER - MG-BHE-MX204-ATIVAS"
+set protocols bgp group eBGP-ATM-IXSP-AS26162 type external
+set protocols bgp group eBGP-ATM-IXSP-AS26162 description "eBGP IPv4 AS26162 - UPSTREAM IX/SP"
+set protocols bgp group eBGP-ATM-IXSP-AS26162 advertise-inactive
+set protocols bgp group eBGP-ATM-IXSP-AS26162 import IN-eBGP-IPv4-IXSP
+set protocols bgp group eBGP-ATM-IXSP-AS26162 export OUT-eBGP-IPv4-IXSP
+set protocols bgp group eBGP-ATM-IXSP-AS26162 peer-as 26162
+set protocols bgp group eBGP-ATM-IXSP-AS26162 neighbor 187.16.216.253
+set protocols bgp group eBGP-ATM-IXSP-AS26162 neighbor 187.16.216.254
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 type external
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 description "eBGP IPv6 AS26162 - UPSTREAM IX/SP"
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 advertise-inactive
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 import IN-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 peer-as 26162
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 neighbor 2001:12f8::253
+set protocols bgp group eBGP-ATM-IXSP-V6-AS26162 neighbor 2001:12f8::254
+set protocols bgp group eBGP-GOOGLE-AS15169 type external
+set protocols bgp group eBGP-GOOGLE-AS15169 description "eBGPv4 AS15169 - PEERING GOOGLE INC"
+set protocols bgp group eBGP-GOOGLE-AS15169 local-address 187.16.208.17
+set protocols bgp group eBGP-GOOGLE-AS15169 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-GOOGLE-AS15169 authentication-key "$9$OYhZIhrWLNw2axNdsgJHk1REhSeLXNVb2z3K8x7Y2Fn6AtOrev"
+set protocols bgp group eBGP-GOOGLE-AS15169 export OUT-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-GOOGLE-AS15169 peer-as 15169
+set protocols bgp group eBGP-GOOGLE-AS15169 neighbor 187.16.222.90
+set protocols bgp group eBGP-GOOGLE-AS15169 neighbor 187.16.221.212
+set protocols bgp group eBGP-GOOGLE-AS15169 neighbor 187.16.216.55
+set protocols bgp group eBGP-GOOGLE-AS15169 neighbor 187.16.218.58
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 type external
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 description "eBGPv6 AS15169 - PEERING GOOGLE INC"
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 local-address 2001:12f8::208:17
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 authentication-key "$9$sygaUqmTn9pfTz6CuEh24oaZjmPTF39M8i.f5/9WLX-dsUjH"
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 peer-as 15169
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 neighbor 2001:12f8::218:58
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 neighbor 2001:12f8::55
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 neighbor 2001:12f8::222:90
+set protocols bgp group eBGP-GOOGLE-V6-AS15169 neighbor 2001:12f8::221:212
+set protocols bgp group eBGP-MICROSOFT-AS8075 type external
+set protocols bgp group eBGP-MICROSOFT-AS8075 description "eBGPv4 AS8075 - PEERING MICROSOFT INTERNET"
+set protocols bgp group eBGP-MICROSOFT-AS8075 local-address 187.16.208.17
+set protocols bgp group eBGP-MICROSOFT-AS8075 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-MICROSOFT-AS8075 export OUT-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-MICROSOFT-AS8075 peer-as 8075
+set protocols bgp group eBGP-MICROSOFT-AS8075 neighbor 187.16.218.144
+set protocols bgp group eBGP-MICROSOFT-AS8075 neighbor 187.16.218.139
+set protocols bgp group eBGP-LINKEDIN-AS14413 type external
+set protocols bgp group eBGP-LINKEDIN-AS14413 description "eBGPv4 AS14413 - PEERING LINKEDIN INC"
+set protocols bgp group eBGP-LINKEDIN-AS14413 local-address 187.16.208.17
+set protocols bgp group eBGP-LINKEDIN-AS14413 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-LINKEDIN-AS14413 export OUT-eBGP-IPv4-IXSP
+set protocols bgp group eBGP-LINKEDIN-AS14413 peer-as 14413
+set protocols bgp group eBGP-LINKEDIN-V6-AS14413 type external
+set protocols bgp group eBGP-LINKEDIN-V6-AS14413 description "eBGPv6 AS14413 - PEERING LINKEDIN INC"
+set protocols bgp group eBGP-LINKEDIN-V6-AS14413 local-address 2001:12f8::208:17
+set protocols bgp group eBGP-LINKEDIN-V6-AS14413 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-LINKEDIN-V6-AS14413 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-LINKEDIN-V6-AS14413 peer-as 14413
+set protocols bgp group eBGP-HURRICANE-AS6939 type external
+set protocols bgp group eBGP-HURRICANE-AS6939 description "eBGPv4 AS6939 - PEERING HURRICANE ELECTRIC"
+set protocols bgp group eBGP-HURRICANE-AS6939 local-address 187.16.208.17
+set protocols bgp group eBGP-HURRICANE-AS6939 import Discard-All
+set protocols bgp group eBGP-HURRICANE-AS6939 export OUT-eBGP-IPv4-IXSP
+set protocols bgp group eBGP-HURRICANE-AS6939 peer-as 6939
+set protocols bgp group eBGP-HURRICANE-AS6939 neighbor 187.16.221.197
+set protocols bgp group eBGP-HURRICANE-V6-AS6939 type external
+set protocols bgp group eBGP-HURRICANE-V6-AS6939 description "eBGPv6 AS6939 - PEERING HURRICANE ELECTRIC"
+set protocols bgp group eBGP-HURRICANE-V6-AS6939 local-address 2001:12f8::208:17
+set protocols bgp group eBGP-HURRICANE-V6-AS6939 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-HURRICANE-V6-AS6939 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-HURRICANE-V6-AS6939 peer-as 6939
+set protocols bgp group eBGP-HURRICANE-V6-AS6939 neighbor 2001:12f8::221:197
+set protocols bgp group eBGP-FACEBOOK-AS32934 type external
+set protocols bgp group eBGP-FACEBOOK-AS32934 description "eBGPv4 AS32934 - PEERING FACEBOOK INC"
+set protocols bgp group eBGP-FACEBOOK-AS32934 local-address 187.16.208.17
+set protocols bgp group eBGP-FACEBOOK-AS32934 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-FACEBOOK-AS32934 export OUT-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-FACEBOOK-AS32934 peer-as 32934
+set protocols bgp group eBGP-FACEBOOK-AS32934 neighbor 187.16.218.82
+set protocols bgp group eBGP-FACEBOOK-AS32934 neighbor 187.16.220.240
+set protocols bgp group eBGP-FACEBOOK-AS32934 neighbor 187.16.222.60
+set protocols bgp group eBGP-FACEBOOK-AS32934 neighbor 187.16.222.61
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 type external
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 description "eBGPv6 AS32934 - PEERING FACEBOOK INC"
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 local-address 2001:12f8::208:17
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 peer-as 32934
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 neighbor 2001:12f8::218:82
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 neighbor 2001:12f8::220:240
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 neighbor 2001:12f8::222:60
+set protocols bgp group eBGP-FACEBOOK-V6-AS32934 neighbor 2001:12f8::222:61
+set protocols bgp group eBGP-AKAMAI-AS20940 type external
+set protocols bgp group eBGP-AKAMAI-AS20940 description "eBGPv4 AS20940 - PEERING AKAMAI TECHNOLOGIES"
+set protocols bgp group eBGP-AKAMAI-AS20940 local-address 187.16.208.17
+set protocols bgp group eBGP-AKAMAI-AS20940 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-AKAMAI-AS20940 export OUT-eBGP-IPv4-IXSP
+set protocols bgp group eBGP-AKAMAI-AS20940 peer-as 20940
+set protocols bgp group eBGP-AKAMAI-AS20940 neighbor 187.16.220.8
+set protocols bgp group eBGP-AKAMAI-V6-AS20940 type external
+set protocols bgp group eBGP-AKAMAI-V6-AS20940 description "eBGPv6 AS20940 - PEERING AKAMAI TECHNOLOGIES"
+set protocols bgp group eBGP-AKAMAI-V6-AS20940 local-address 2001:12f8::208:17
+set protocols bgp group eBGP-AKAMAI-V6-AS20940 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-AKAMAI-V6-AS20940 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-AKAMAI-V6-AS20940 peer-as 20940
+set protocols bgp group eBGP-AKAMAI-V6-AS20940 neighbor 2001:12f8::220:8
+set protocols bgp group eBGP-G8-AS28329 type external
+set protocols bgp group eBGP-G8-AS28329 description "eBGPv4 AS28329 - UPSTREAM G8 TELECOM"
+set protocols bgp group eBGP-G8-AS28329 local-address 179.96.88.22
+set protocols bgp group eBGP-G8-AS28329 advertise-inactive
+set protocols bgp group eBGP-G8-AS28329 import IN-eBGP-IPv4-G8
+set protocols bgp group eBGP-G8-AS28329 export OUT-eBGP-IPv4-G8
+set protocols bgp group eBGP-G8-AS28329 peer-as 28329
+set protocols bgp group eBGP-G8-AS28329 neighbor 179.96.88.21
+set protocols bgp group eBGP-G8-V6-AS28329 type external
+set protocols bgp group eBGP-G8-V6-AS28329 description "eBGPv6 AS28329 - UPSTREAM G8 TELECOM"
+set protocols bgp group eBGP-G8-V6-AS28329 local-address 2804:39c:f002::3
+set protocols bgp group eBGP-G8-V6-AS28329 advertise-inactive
+set protocols bgp group eBGP-G8-V6-AS28329 import IN-eBGP-IPv6-G8
+set protocols bgp group eBGP-G8-V6-AS28329 export OUT-eBGP-IPv6-G8
+set protocols bgp group eBGP-G8-V6-AS28329 peer-as 28329
+set protocols bgp group eBGP-G8-V6-AS28329 neighbor 2804:39c:f002::2
+set protocols bgp group eBGP-LOOKINGGLASS-PTTS type external
+set protocols bgp group eBGP-LOOKINGGLASS-PTTS advertise-inactive
+set protocols bgp group eBGP-LOOKINGGLASS-PTTS import Discard-All
+set protocols bgp group eBGP-LOOKINGGLASS-PTTS export Discard-All
+set protocols bgp group eBGP-LOOKINGGLASS-PTTS peer-as 20121
+set protocols bgp group eBGP-LOOKINGGLASS-PTTS neighbor 187.16.216.252 description "PEER - LOOKING GLASS PTT/SP"
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 type external
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 description "eBGPv6 AS8075 - PEERING MICROSOFT INTERNET"
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 local-address 2001:12f8::208:17
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 peer-as 8075
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 neighbor 2001:12f8::218:144
+set protocols bgp group eBGP-MICROSOFT-V6-AS8075 neighbor 2001:12f8::218:139
+set protocols bgp group iBGP-V6-FULLROUTING type internal
+set protocols bgp group iBGP-V6-FULLROUTING local-address 2804:14::253
+set protocols bgp group iBGP-V6-FULLROUTING advertise-inactive
+set protocols bgp group iBGP-V6-FULLROUTING export OUT-iBGP-IPv6-FULLROUTING
+set protocols bgp group iBGP-V6-FULLROUTING peer-as 28360
+set protocols bgp group iBGP-V6-FULLROUTING neighbor 2804:14::254 description "PEER - MG-BHE-MX204-ATIVAS"
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 type external
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 description "eBGPv4 - PEERING PNI GOOGLE INC"
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 local-address 179.124.225.246
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 authentication-key "$9$teW601hevL-b2WLxdwgUDuOB1RSvML7NbfTyKW8Vb5Qz6/thSr"
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 export OUT-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 peer-as 15169
+set protocols bgp group eBGP-GOOGLE_PNI-AS15169 neighbor 179.124.225.245
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 type external
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 description "eBGPv6 - PEERING PNI GOOGLE INC"
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 local-address 2804:14:0:100::104
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 authentication-key "$9$hjKyeWNdsoZjbs2aGif5SrlevLdVsg4Z9AX-bwJZCtpB1hWLx"
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 peer-as 15169
+set protocols bgp group eBGP-GOOGLE_PNI-V6-AS15169 neighbor 2804:14:0:100::105
+set protocols bgp group eBGP-AMAZON-AS16509 type external
+set protocols bgp group eBGP-AMAZON-AS16509 description "eBGPv4 - PEERING AMAZON AWS"
+set protocols bgp group eBGP-AMAZON-AS16509 local-address 187.16.208.17
+set protocols bgp group eBGP-AMAZON-AS16509 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-AMAZON-AS16509 export OUT-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-AMAZON-AS16509 peer-as 16509
+set protocols bgp group eBGP-AMAZON-V6-AS16509 type external
+set protocols bgp group eBGP-AMAZON-V6-AS16509 description "eBGPv6  - PEERING AMAZON AWS"
+set protocols bgp group eBGP-AMAZON-V6-AS16509 local-address 2001:12f8::208:17
+set protocols bgp group eBGP-AMAZON-V6-AS16509 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-AMAZON-V6-AS16509 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-AMAZON-V6-AS16509 peer-as 16509
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 type external
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 description "eBGPv4 - PEERING PNI FACEBOOK INC"
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 local-address 179.124.225.249
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 export OUT-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 peer-as 32934
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 neighbor 179.124.225.250 description "eBGPv4 - PEERING PNI01"
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 neighbor 179.124.225.250 local-address 179.124.225.249
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 neighbor 157.240.76.168 description "eBGPv4 - PEERING PNI02"
+set protocols bgp group eBGP-FACEBOOK_PNI-AS32934 neighbor 157.240.76.168 local-address 157.240.76.169
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 type external
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 description "eBGPv6 - PEERING PNI FACEBOOK INC"
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 local-address 2804:14:0:100::102
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 import IN-eBGP-IPv6-PEERING
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 export OUT-eBGP-IPv6-IXSP
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 peer-as 32934
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 neighbor 2804:14:0:100::103 description "eBGPv6 - PEERING PNI01"
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 neighbor 2804:14:0:100::103 local-address 2804:14:0:100::102
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 neighbor 2620:0:1cff:dead:beee::1176 description "eBGPv6 - PEERING PNI02"
+set protocols bgp group eBGP-FACEBOOK_PNI-V6-AS32934 neighbor 2620:0:1cff:dead:beee::1176 local-address 2620:0:1cff:dead:beee::1177
+set protocols bgp group eBGP-LINKBRASIL-AS271253 type external
+set protocols bgp group eBGP-LINKBRASIL-AS271253 description "eBGPv4 AS271253 - UPSTREAM LINKBRASIL TELECOM"
+set protocols bgp group eBGP-LINKBRASIL-AS271253 local-address 131.255.57.79
+set protocols bgp group eBGP-LINKBRASIL-AS271253 advertise-inactive
+set protocols bgp group eBGP-LINKBRASIL-AS271253 import IN-eBGP-IPv4-LINKBRASIL
+set protocols bgp group eBGP-LINKBRASIL-AS271253 export OUT-eBGP-IPv4-LINKBRASIL
+set protocols bgp group eBGP-LINKBRASIL-AS271253 peer-as 271253
+set protocols bgp group eBGP-LINKBRASIL-AS271253 neighbor 131.255.57.78
+deactivate protocols bgp group eBGP-LINKBRASIL-AS271253
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 type external
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 description "eBGPv6 AS271253 - UPSTREAM LINKBRASIL TELECOM"
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 local-address 2804:7898:5000::a:47
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 advertise-inactive
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 import IN-eBGP-IPv6-LINKBRASIL
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 export OUT-eBGP-IPv6-LINKBRASIL
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 peer-as 271253
+set protocols bgp group eBGP-LINKBRASIL-V6-AS271253 neighbor 2804:7898:5000::a:46
+deactivate protocols bgp group eBGP-LINKBRASIL-V6-AS271253
+set protocols bgp group RR type internal
+set protocols bgp group RR local-address 189.76.208.253
+set protocols bgp group RR advertise-inactive
+set protocols bgp group RR import IN-RR
+set protocols bgp group RR family inet unicast
+set protocols bgp group RR family inet-vpn unicast
+set protocols bgp group RR family inet6 labeled-unicast explicit-null
+set protocols bgp group RR family inet6-vpn unicast
+set protocols bgp group RR family l2vpn auto-discovery-only
+set protocols bgp group RR export OUT-RR
+set protocols bgp group RR peer-as 28360
+set protocols bgp group RR neighbor 172.31.254.250 description "PEER - MG-BHE-ACX2100-RREFLECTOR1"
+set protocols bgp group RR neighbor 172.31.254.251 description "PEER - MG-GVS-ACX2100-RREFLECTOR2"
+set protocols bgp group RR neighbor 172.31.255.250 description "PEER - PA-PUP-VRR-RREFLECTOR1"
+set protocols bgp group WANGUARD-FRR type internal
+set protocols bgp group WANGUARD-FRR local-address 189.76.208.253
+set protocols bgp group WANGUARD-FRR import IN-WANGUARD
+set protocols bgp group WANGUARD-FRR family inet unicast
+set protocols bgp group WANGUARD-FRR export DENY-ALL
+set protocols bgp group WANGUARD-FRR peer-as 28360
+set protocols bgp group WANGUARD-FRR neighbor 189.76.208.10 description "PEER - SRV_WANGUARD"
+set protocols bgp group WANGUARD-EXABGP type internal
+set protocols bgp group WANGUARD-EXABGP local-address 189.76.208.253
+set protocols bgp group WANGUARD-EXABGP import IN-WANGUARD
+set protocols bgp group WANGUARD-EXABGP family inet unicast
+set protocols bgp group WANGUARD-EXABGP family inet flow no-validate IN-WANGUARD-FLOWSPEC
+set protocols bgp group WANGUARD-EXABGP export DENY-ALL
+set protocols bgp group WANGUARD-EXABGP peer-as 28360
+set protocols bgp group WANGUARD-EXABGP neighbor 172.31.254.0 description "PEER - SRV_WANGUARD"
+set protocols bgp group eBGP-CATO-AS13150 type external
+set protocols bgp group eBGP-CATO-AS13150 description "eBGPv4 AS13150 - PEERING CATO NETWORKS"
+set protocols bgp group eBGP-CATO-AS13150 local-address 187.16.208.17
+set protocols bgp group eBGP-CATO-AS13150 import IN-eBGP-IPv4-PEERING
+set protocols bgp group eBGP-CATO-AS13150 export OUT-eBGP-IPv4-IXSP
+set protocols bgp group eBGP-CATO-AS13150 peer-as 13150
+set protocols bgp group eBGP-CATO-AS13150 neighbor 187.16.212.76
+set protocols ospf traffic-engineering
+set protocols ospf export ECMP
+set protocols ospf reference-bandwidth 1g
+set protocols ospf no-rfc-1583
+set protocols ospf area 0.0.0.0 interface lo0.255 passive
+set protocols ospf area 0.0.0.0 interface xe-0/1/2.4005 interface-type p2p
+set protocols ospf area 0.0.0.0 interface xe-0/1/2.4005 metric 10
+set protocols ospf area 0.0.0.0 interface ae1.4004 interface-type p2p
+set protocols ospf area 0.0.0.0 interface ae1.4004 metric 10
+set protocols ospf area 0.0.0.0 interface ae1.3810 interface-type p2p
+set protocols ospf area 0.0.0.0 interface ae1.3810 metric 10
+set protocols ospf area 0.0.0.0 interface ae1.1021 interface-type p2p
+set protocols ospf area 0.0.0.0 interface ae1.1021 metric 10
+set protocols ospf3 export ECMPv6
+set protocols ospf3 reference-bandwidth 1g
+set protocols ospf3 area 0.0.0.0 interface lo0.255 passive
+set protocols ospf3 area 0.0.0.0 interface ae1.4004 interface-type p2p
+set protocols ospf3 area 0.0.0.0 interface ae1.4004 metric 10
+set protocols ospf3 area 0.0.0.0 interface ae1.3810 interface-type p2p
+set protocols ospf3 area 0.0.0.0 interface ae1.3810 metric 10
+set protocols ldp track-igp-metric
+set protocols ldp import IMPORT-LDP
+set protocols ldp export EXPORT-LDP
+set protocols ldp transport-address 189.76.208.253
+set protocols ldp interface xe-0/1/2.4005
+set protocols ldp interface ae1.1021
+set protocols ldp interface ae1.3810
+set protocols ldp interface ae1.4004
+set protocols ldp interface fxp0.0 disable
+set protocols ldp interface lo0.255
+set policy-options prefix-list ntp-servers apply-path "system ntp server <*>"
+set policy-options prefix-list NetworkBGP-Prefixes 172.16.100.248/30
+set policy-options prefix-list NetworkBGP-Prefixes 179.124.225.244/30
+set policy-options prefix-list NetworkBGP-Prefixes 179.124.225.248/30
+set policy-options prefix-list bgp-peers apply-path "protocols bgp group <*> neighbor <*>"
+set policy-options prefix-list snmp-servers apply-path "snmp community <*> clients <*>"
+set policy-options prefix-list localhost-ntp apply-path "system ntp source-address <*>"
+set policy-options prefix-list radius-servers apply-path "system radius-server <*>"
+set policy-options prefix-list multicast-all-routers 224.0.0.2/32
+set policy-options prefix-list dns-servers apply-path "system name-server <*>"
+set policy-options prefix-list ldp-multicast 224.0.0.2/32
+set policy-options prefix-list ldp-multicast 224.0.0.6/32
+set policy-options prefix-list local-loopback 189.76.208.253/32
+set policy-options prefix-list locals-v6 apply-path "interfaces <*> unit <*> family inet6 address <*>"
+set policy-options prefix-list locals-v4 apply-path "interfaces <*> unit <*> family inet address <*>"
+set policy-options prefix-list dns-serversv6 apply-path "system name-server <*:*>"
+set policy-options prefix-list ntpv6-server apply-path "system ntp server <*:*>"
+set policy-options prefix-list localhost-v6 ::1/128
+set policy-options prefix-list link-localv6 fe80::/10
+set policy-options prefix-list bgpv6-peers apply-path "protocols bgp group <*> neighbor <*:*>"
+set policy-options prefix-list multicastv6 ff00::/8
+set policy-options prefix-list ipv4-interfaces apply-path "interfaces <*> unit <*> family inet address <*>"
+set policy-options prefix-list ospf 224.0.0.5/32
+set policy-options prefix-list ospf 224.0.0.6/32
+set policy-options prefix-list NetworkBGPv6-Prefixes 2804:14::253/128
+set policy-options prefix-list NetworkBGPv6-Prefixes 2804:14:0:100::102/127
+set policy-options prefix-list NetworkBGPv6-Prefixes 2804:14:0:100::104/127
+set policy-options prefix-list ipv6-interfaces apply-path "interfaces <*> unit <*> family inet6 address <*>"
+set policy-options prefix-list AllowServices 54.233.230.68/32
+set policy-options prefix-list AllowServices 177.8.22.6/32
+set policy-options prefix-list AllowServices 189.76.208.0/24
+set policy-options prefix-list AllowServices 189.76.223.0/24
+set policy-options prefix-list AllowServices 189.76.230.0/24
+set policy-options prefix-list AllowServices 192.168.1.0/24
+set policy-options prefix-list AllowServices 200.0.89.1/32
+set policy-options policy-statement DENY-ALL then reject
+set policy-options policy-statement Default-originate-eBGP term gateway from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement Default-originate-eBGP term gateway then next-hop self
+set policy-options policy-statement Default-originate-eBGP term gateway then accept
+set policy-options policy-statement Default-originate-eBGP then reject
+set policy-options policy-statement Discard-All term implicit-deny then reject
+set policy-options policy-statement ECMP then load-balance per-packet
+set policy-options policy-statement ECMPv6 term connected from protocol direct
+set policy-options policy-statement ECMPv6 term connected from area 0.0.0.0
+set policy-options policy-statement ECMPv6 term connected from route-filter 2804:14::/32 prefix-length-range /32-/128
+set policy-options policy-statement ECMPv6 term connected then accept
+set policy-options policy-statement ECMPv6 then load-balance per-packet
+set policy-options policy-statement EXPORT-LDP term ACCEPT-LOOPBACK from route-filter 189.76.208.0/24 prefix-length-range /32-/32
+set policy-options policy-statement EXPORT-LDP term ACCEPT-LOOPBACK from route-filter 177.8.16.0/23 prefix-length-range /32-/32
+set policy-options policy-statement EXPORT-LDP term ACCEPT-LOOPBACK from route-filter 189.76.224.255/32 exact
+set policy-options policy-statement EXPORT-LDP term ACCEPT-LOOPBACK from route-filter 172.31.255.0/24 prefix-length-range /32-/32
+set policy-options policy-statement EXPORT-LDP term ACCEPT-LOOPBACK from route-filter 172.31.254.0/24 prefix-length-range /32-/32
+set policy-options policy-statement EXPORT-LDP term ACCEPT-LOOPBACK from route-filter 172.31.253.0/24 prefix-length-range /32-/32
+set policy-options policy-statement EXPORT-LDP term ACCEPT-LOOPBACK then accept
+set policy-options policy-statement EXPORT-LDP term DENY-ALL then reject
+set policy-options policy-statement FULL-ROUTING-eBGP term DENY-PREFIX-RFC1918 from route-filter 10.0.0.0/8 orlonger
+set policy-options policy-statement FULL-ROUTING-eBGP term DENY-PREFIX-RFC1918 from route-filter 172.16.0.0/12 orlonger
+set policy-options policy-statement FULL-ROUTING-eBGP term DENY-PREFIX-RFC1918 from route-filter 192.168.0.0/16 orlonger
+set policy-options policy-statement FULL-ROUTING-eBGP term DENY-PREFIX-RFC1918 then reject
+set policy-options policy-statement FULL-ROUTING-eBGP term DENY-GATEWAY from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement FULL-ROUTING-eBGP term DENY-GATEWAY then reject
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 189.76.208.0/20 exact
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 189.76.224.0/20 exact
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 177.8.0.0/20 exact
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 177.8.16.0/20 exact
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 179.124.224.0/20 exact
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 138.94.8.0/22 exact
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 177.8.0.0/20 upto /24
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 177.8.16.0/20 upto /24
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 189.76.208.0/20 upto /24
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 189.76.224.0/20 upto /24
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 179.124.224.0/20 upto /24
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE from route-filter 138.94.8.0/22 upto /24
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-ALL from protocol bgp
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-ALL from route-filter 0.0.0.0/0 upto /24
+set policy-options policy-statement FULL-ROUTING-eBGP term PERMIT-PREFIX-ALL then accept
+set policy-options policy-statement FULL-ROUTING-eBGP then reject
+set policy-options policy-statement FULL-ROUTING-eBGPv6 term export-v6-ebgp from family inet6
+set policy-options policy-statement FULL-ROUTING-eBGPv6 term export-v6-ebgp from protocol bgp
+set policy-options policy-statement FULL-ROUTING-eBGPv6 term export-v6-ebgp from community COMMUNITY-UPLINKs
+set policy-options policy-statement FULL-ROUTING-eBGPv6 term export-v6-ebgp then next-hop self
+set policy-options policy-statement FULL-ROUTING-eBGPv6 term export-v6-ebgp then accept
+set policy-options policy-statement FULL-ROUTING-eBGPv6 then reject
+set policy-options policy-statement IMPORT-LDP term ACCEPT-LOOPBACK from route-filter 189.76.208.0/24 prefix-length-range /32-/32
+set policy-options policy-statement IMPORT-LDP term ACCEPT-LOOPBACK from route-filter 177.8.16.0/23 prefix-length-range /32-/32
+set policy-options policy-statement IMPORT-LDP term ACCEPT-LOOPBACK from route-filter 189.76.224.255/32 exact
+set policy-options policy-statement IMPORT-LDP term ACCEPT-LOOPBACK from route-filter 172.31.255.0/24 prefix-length-range /32-/32
+set policy-options policy-statement IMPORT-LDP term ACCEPT-LOOPBACK from route-filter 172.31.254.0/24 prefix-length-range /32-/32
+set policy-options policy-statement IMPORT-LDP term ACCEPT-LOOPBACK from route-filter 172.31.253.0/24 prefix-length-range /32-/32
+set policy-options policy-statement IMPORT-LDP term ACCEPT-LOOPBACK then accept
+set policy-options policy-statement IMPORT-LDP term DENY-ALL then reject
+set policy-options policy-statement IN-RR then accept
+set policy-options policy-statement IN-WANGUARD term BLACKHOLE from community COMMUNITY-BLACKHOLE
+set policy-options policy-statement IN-WANGUARD term BLACKHOLE then next-hop discard
+set policy-options policy-statement IN-WANGUARD term BLACKHOLE then accept
+set policy-options policy-statement IN-WANGUARD term MITIGA-G8 from community COMMUNITY-MITIGA-G8
+set policy-options policy-statement IN-WANGUARD term MITIGA-G8 then accept
+set policy-options policy-statement IN-WANGUARD term MITIGA-ALGAR from community COMMUNITY-MITIGA-ALGAR
+set policy-options policy-statement IN-WANGUARD term MITIGA-ALGAR then accept
+set policy-options policy-statement IN-WANGUARD term FLOWSPEC from rib inetflow.0
+set policy-options policy-statement IN-WANGUARD term FLOWSPEC then accept
+set policy-options policy-statement IN-WANGUARD then reject
+set policy-options policy-statement IN-WANGUARD-FLOWSPEC then local-preference 1200
+set policy-options policy-statement IN-WANGUARD-FLOWSPEC then validation-state valid
+set policy-options policy-statement IN-WANGUARD-FLOWSPEC then accept
+set policy-options policy-statement IN-eBGP-IPv4-ENS term PERMIT-ENS-AS264533 from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-ENS term PERMIT-ENS-AS264533 from route-filter 132.255.232.0/22 upto /24
+set policy-options policy-statement IN-eBGP-IPv4-ENS term PERMIT-ENS-AS264533 then local-preference 600
+set policy-options policy-statement IN-eBGP-IPv4-ENS term PERMIT-ENS-AS264533 then community + COMMUNITY-ENS
+set policy-options policy-statement IN-eBGP-IPv4-ENS term PERMIT-ENS-AS264533 then community + COMMUNITY-ISPs
+set policy-options policy-statement IN-eBGP-IPv4-ENS term PERMIT-ENS-AS264533 then accept
+set policy-options policy-statement IN-eBGP-IPv4-ENS then reject
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from route-filter 127.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from route-filter 169.254.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from route-filter 192.0.2.0/24 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from route-filter 192.168.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from route-filter 10.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from route-filter 172.16.0.0/12 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS from route-filter 0.0.0.0/0 prefix-length-range /25-/32
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-PREFIX-BOGONS then reject
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-DOWNSTREAM from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-DOWNSTREAM from community COMMUNITY-ISPs
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-DOWNSTREAM from community COMMUNITY-ISP-CDNs
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-DOWNSTREAM then reject
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-ASPATH from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-ASPATH from as-path ASPATH-IBITTELECOM
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-ASPATH from as-path ASPATH-BKPNET
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DENY-ASPATH then reject
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DEFAULT-GW from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DEFAULT-GW then local-preference 100
+set policy-options policy-statement IN-eBGP-IPv4-G8 term DEFAULT-GW then accept
+set policy-options policy-statement IN-eBGP-IPv4-G8 then local-preference 90
+set policy-options policy-statement IN-eBGP-IPv4-G8 then community delete COMMUNITY-ALL
+set policy-options policy-statement IN-eBGP-IPv4-G8 then community add COMMUNITY-UPLINKs
+set policy-options policy-statement IN-eBGP-IPv4-G8 then community add COMMUNITY-G8
+set policy-options policy-statement IN-eBGP-IPv4-G8 then accept
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from route-filter 127.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from route-filter 169.254.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from route-filter 192.0.2.0/24 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from route-filter 192.168.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from route-filter 10.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS from route-filter 172.16.0.0/12 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-BOGONS then reject
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-WKVE from route-filter 189.76.208.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-WKVE from route-filter 189.76.224.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-WKVE from route-filter 177.8.0.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-WKVE from route-filter 177.8.16.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-WKVE from route-filter 179.124.224.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-WKVE from route-filter 138.94.8.0/22 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-PREFIX-WKVE then reject
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-DOWNSTREAM from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-DOWNSTREAM from community COMMUNITY-ISPs
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-DOWNSTREAM from community COMMUNITY-ISP-CDNs
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-DOWNSTREAM from community COMM-IXSP-IBITTELECOM
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-DOWNSTREAM from community COMM-IXSP-CENTURY
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-DOWNSTREAM then reject
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-BILATERAL from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-BILATERAL from community COMMUNITY-CENTURY
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-BILATERAL from community COMMUNITY-IBITTELECOM
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-BILATERAL then reject
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-COMMUNITY-IXSP from community COMM-IXSP-ELONET
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-COMMUNITY-IXSP from community COMM-IXSP-BRASILSITEINFO
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-COMMUNITY-IXSP from community COMM-IXSP-COELHOTEC
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-COMMUNITY-IXSP from community COMM-IXSP-GOBTELECOM
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-COMMUNITY-IXSP from community COMM-IXSP-ALGAR
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-COMMUNITY-IXSP then reject
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-ASPATH from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-ASPATH from as-path ASPATH-BKPNET
+set policy-options policy-statement IN-eBGP-IPv4-IXSP term DENY-ASPATH then reject
+set policy-options policy-statement IN-eBGP-IPv4-IXSP then local-preference 110
+set policy-options policy-statement IN-eBGP-IPv4-IXSP then community add COMMUNITY-IXSP
+set policy-options policy-statement IN-eBGP-IPv4-IXSP then community add COMMUNITY-UPLINKs
+set policy-options policy-statement IN-eBGP-IPv4-IXSP then accept
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-ALL then reject
+deactivate policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-ALL then reject
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from route-filter 127.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from route-filter 169.254.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from route-filter 192.0.2.0/24 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from route-filter 192.168.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from route-filter 10.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from route-filter 172.16.0.0/12 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS from route-filter 0.0.0.0/0 prefix-length-range /25-/32
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-PREFIX-BOGONS then reject
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-DOWNSTREAM from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-DOWNSTREAM from community COMMUNITY-ISPs
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-DOWNSTREAM from community COMMUNITY-ISP-CDNs
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-DOWNSTREAM then reject
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-ASPATH from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-ASPATH from as-path ASPATH-IBITTELECOM
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-ASPATH from as-path ASPATH-BKPNET
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL term DENY-ASPATH then reject
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL then local-preference 90
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL then community delete COMMUNITY-ALL
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL then community add COMMUNITY-UPLINKs
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL then community add COMMUNITY-LINKBRASIL
+set policy-options policy-statement IN-eBGP-IPv4-LINKBRASIL then accept
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from route-filter 127.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from route-filter 169.254.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from route-filter 192.0.2.0/24 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from route-filter 192.168.0.0/16 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from route-filter 10.0.0.0/8 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS from route-filter 172.16.0.0/12 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-BOGONS then reject
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-WKVE from route-filter 189.76.208.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-WKVE from route-filter 189.76.224.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-WKVE from route-filter 177.8.0.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-WKVE from route-filter 177.8.16.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-WKVE from route-filter 179.124.224.0/20 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-WKVE from route-filter 138.94.8.0/22 upto /32
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-PREFIX-WKVE then reject
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-DOWNSTREAM from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-DOWNSTREAM from community COMMUNITY-ISPs
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-DOWNSTREAM from community COMMUNITY-ISP-CDNs
+set policy-options policy-statement IN-eBGP-IPv4-PEERING term DENY-DOWNSTREAM then reject
+set policy-options policy-statement IN-eBGP-IPv4-PEERING then local-preference 150
+set policy-options policy-statement IN-eBGP-IPv4-PEERING then community add COMMUNITY-UPLINKs
+set policy-options policy-statement IN-eBGP-IPv4-PEERING then accept
+set policy-options policy-statement IN-eBGP-IPv6-G8 term DEFAULT-GW from route-filter ::/0 exact
+set policy-options policy-statement IN-eBGP-IPv6-G8 term DEFAULT-GW then local-preference 100
+set policy-options policy-statement IN-eBGP-IPv6-G8 term DEFAULT-GW then accept
+set policy-options policy-statement IN-eBGP-IPv6-G8 term PERMIT-PREFIX-ALL from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv6-G8 term PERMIT-PREFIX-ALL then accept
+set policy-options policy-statement IN-eBGP-IPv6-G8 then local-preference 90
+set policy-options policy-statement IN-eBGP-IPv6-G8 then community delete COMMUNITY-ALL
+set policy-options policy-statement IN-eBGP-IPv6-G8 then community add COMMUNITY-G8
+set policy-options policy-statement IN-eBGP-IPv6-G8 then accept
+set policy-options policy-statement IN-eBGP-IPv6-IXSP term PERMIT-PREFIX-ALL from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv6-IXSP term PERMIT-PREFIX-ALL then accept
+set policy-options policy-statement IN-eBGP-IPv6-IXSP then local-preference 110
+set policy-options policy-statement IN-eBGP-IPv6-IXSP then community add COMMUNITY-IXSP
+set policy-options policy-statement IN-eBGP-IPv6-IXSP then community add COMMUNITY-UPLINKs
+set policy-options policy-statement IN-eBGP-IPv6-IXSP then accept
+set policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL term DENY-ALL then reject
+deactivate policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL term DENY-ALL
+set policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL term PERMIT-PREFIX-ALL from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL term PERMIT-PREFIX-ALL then accept
+set policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL then local-preference 80
+set policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL then community delete COMMUNITY-ALL
+set policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL then community add COMMUNITY-LINKBRASIL
+set policy-options policy-statement IN-eBGP-IPv6-LINKBRASIL then accept
+set policy-options policy-statement IN-eBGP-IPv6-PEERING term PERMIT-PREFIX-ALL from protocol bgp
+set policy-options policy-statement IN-eBGP-IPv6-PEERING term PERMIT-PREFIX-ALL then accept
+set policy-options policy-statement IN-eBGP-IPv6-PEERING then local-preference 110
+set policy-options policy-statement IN-eBGP-IPv6-PEERING then community delete COMMUNITY-ALL
+set policy-options policy-statement IN-eBGP-IPv6-PEERING then community add COMMUNITY-UPLINKs
+set policy-options policy-statement IN-eBGP-IPv6-PEERING then accept
+set policy-options policy-statement OUT-RR term DEFAULT-V4 from family inet
+set policy-options policy-statement OUT-RR term DEFAULT-V4 from protocol bgp
+set policy-options policy-statement OUT-RR term DEFAULT-V4 from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement OUT-RR term DEFAULT-V4 then next-hop self
+set policy-options policy-statement OUT-RR term DEFAULT-V4 then accept
+set policy-options policy-statement OUT-RR term DEFAULT-V6 from family inet6
+set policy-options policy-statement OUT-RR term DEFAULT-V6 from protocol bgp
+set policy-options policy-statement OUT-RR term DEFAULT-V6 from route-filter ::/0 exact
+set policy-options policy-statement OUT-RR term DEFAULT-V6 then next-hop self
+set policy-options policy-statement OUT-RR term DEFAULT-V6 then accept
+set policy-options policy-statement OUT-RR term DIRECT-V4 from family inet
+set policy-options policy-statement OUT-RR term DIRECT-V4 from protocol direct
+set policy-options policy-statement OUT-RR term DIRECT-V4 from prefix-list NetworkBGP-Prefixes
+set policy-options policy-statement OUT-RR term DIRECT-V4 then accept
+set policy-options policy-statement OUT-RR term DIRECT-V6 from family inet6
+set policy-options policy-statement OUT-RR term DIRECT-V6 from protocol direct
+set policy-options policy-statement OUT-RR term DIRECT-V6 from prefix-list NetworkBGPv6-Prefixes
+set policy-options policy-statement OUT-RR term DIRECT-V6 then accept
+set policy-options policy-statement OUT-RR term STATIC-V4 from family inet
+set policy-options policy-statement OUT-RR term STATIC-V4 from protocol static
+set policy-options policy-statement OUT-RR term STATIC-V4 from prefix-list NetworkBGP-Prefixes
+set policy-options policy-statement OUT-RR term STATIC-V4 then accept
+set policy-options policy-statement OUT-RR term STATIC-V6 from family inet6
+set policy-options policy-statement OUT-RR term STATIC-V6 from protocol static
+set policy-options policy-statement OUT-RR term STATIC-V6 from prefix-list NetworkBGPv6-Prefixes
+set policy-options policy-statement OUT-RR term STATIC-V6 then accept
+set policy-options policy-statement OUT-RR term ASPATH-LOCAL from protocol bgp
+set policy-options policy-statement OUT-RR term ASPATH-LOCAL from as-path local-as
+set policy-options policy-statement OUT-RR term ASPATH-LOCAL then accept
+set policy-options policy-statement OUT-RR term CLIENTES from community COMMUNITY-CLIENTES
+set policy-options policy-statement OUT-RR term CLIENTES then accept
+set policy-options policy-statement OUT-RR term GERENCIA from community COMMUNITY-GERENCIA
+set policy-options policy-statement OUT-RR term GERENCIA then accept
+set policy-options policy-statement OUT-RR term ISP-TRANSIT from community COMMUNITY-ISPs
+set policy-options policy-statement OUT-RR term ISP-TRANSIT then accept
+set policy-options policy-statement OUT-RR term ISP-CDN from community COMMUNITY-ISP-CDNs
+set policy-options policy-statement OUT-RR term ISP-CDN then accept
+set policy-options policy-statement OUT-RR term VPN-V4 from family inet-vpn
+set policy-options policy-statement OUT-RR term VPN-V4 then accept
+set policy-options policy-statement OUT-RR term VPN-V6 from family inet6-vpn
+set policy-options policy-statement OUT-RR term VPN-V6 then accept
+set policy-options policy-statement OUT-RR then reject
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term DENY-MITIGACAO-ALGAR from community COMMUNITY-MITIGA-ALGAR
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term DENY-MITIGACAO-ALGAR then reject
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-MITIGACAO-G8 from community COMMUNITY-MITIGA-G8
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-MITIGACAO-G8 then community delete COMMUNITY-ALL
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-MITIGACAO-G8 then community add COMMUNITY-MITIGACAO_G8
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-MITIGACAO-G8 then accept
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-BLACKHOLE from community COMMUNITY-BLACKHOLE
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-BLACKHOLE then community delete COMMUNITY-ALL
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-BLACKHOLE then community add COMMUNITY-BLACKHOLE_G8
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-BLACKHOLE then accept
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE from route-filter 189.76.208.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE from route-filter 189.76.224.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE from route-filter 177.8.0.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE from route-filter 177.8.16.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE from route-filter 179.124.224.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE from route-filter 138.94.8.0/22 exact
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE then community delete COMMUNITY-ALL
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-CENIBRA-AS263118 from protocol bgp
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-CENIBRA-AS263118 from community COMMUNITY-CENIBRA
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-CENIBRA-AS263118 then community delete COMMUNITY-ALL
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-CENIBRA-AS263118 then as-path-prepend "28360 28360 28360 28360"
+set policy-options policy-statement OUT-eBGP-IPv4-G8 term PERMIT-CENIBRA-AS263118 then accept
+set policy-options policy-statement OUT-eBGP-IPv4-G8 then reject
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE from route-filter 189.76.208.0/20 prefix-length-range /21-/21
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE from route-filter 189.76.224.0/20 prefix-length-range /21-/21
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE from route-filter 177.8.0.0/20 prefix-length-range /21-/21
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE from route-filter 177.8.16.0/20 prefix-length-range /21-/21
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE from route-filter 179.124.224.0/20 prefix-length-range /21-/21
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE from route-filter 138.94.8.0/22 prefix-length-range /23-/23
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE then community set COMM-IXSP-DENY-G8
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE then community set COMM-IXSP-DENY-ALGAR
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE then community set COMM-IXSP-DENY-PARTICIPANTES
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-TRANSITOS_ALL from community COMMUNITY-ISPs
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then community set COMM-IXSP-DENY-G8
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then community set COMM-IXSP-DENY-ALGAR
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then community set COMM-IXSP-DENY-PARTICIPANTES
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then accept
+set policy-options policy-statement OUT-eBGP-IPv4-IXSP then reject
+set policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term DENY-ALL then reject
+deactivate policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term DENY-ALL
+set policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term PERMIT-PREFIX-WKVE from route-filter 189.76.208.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term PERMIT-PREFIX-WKVE from route-filter 189.76.224.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term PERMIT-PREFIX-WKVE from route-filter 177.8.0.0/20 exact
+set policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term PERMIT-PREFIX-WKVE from route-filter 177.8.16.0/20 exact
+deactivate policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term PERMIT-PREFIX-WKVE from route-filter 179.124.224.0/20 exact
+deactivate policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term PERMIT-PREFIX-WKVE from route-filter 138.94.8.0/22 exact
+set policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement OUT-eBGP-IPv4-LINKBRASIL then reject
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-WKVE from route-filter 189.76.208.0/20 upto /24
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-WKVE from route-filter 189.76.224.0/20 upto /24
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-WKVE from route-filter 177.8.0.0/20 upto /24
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-WKVE from route-filter 177.8.16.0/20 upto /24
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-WKVE from route-filter 179.124.224.0/20 upto /24
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-WKVE from route-filter 138.94.8.0/22 upto /24
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-TRANSITOS_ALL from community COMMUNITY-ISPs
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING term PERMIT-PREFIX-TRANSITOS_ALL then accept
+set policy-options policy-statement OUT-eBGP-IPv4-PEERING then reject
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term DENY-MITIGACAO-ALGAR from community COMMUNITY-MITIGA-ALGAR
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term DENY-MITIGACAO-ALGAR then reject
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-MITIGACAO-G8 from community COMMUNITY-MITIGA-G8
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-MITIGACAO-G8 then accept
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-BLACKHOLE from community COMMUNITY-BLACKHOLE
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-BLACKHOLE then community delete COMMUNITY-ALL
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-BLACKHOLE then community add COMMUNITY-BLACKHOLE_G8
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-BLACKHOLE then accept
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-PREFIX-WKVE from family inet6
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-PREFIX-WKVE from route-filter 2804:14::/32 exact
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-PREFIX-WKVE then community delete COMMUNITY-ALL
+set policy-options policy-statement OUT-eBGP-IPv6-G8 term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement OUT-eBGP-IPv6-G8 then reject
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-WKVE from route-filter 2804:14::/32 exact
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-WKVE from route-filter 2804:14::/33 exact
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-WKVE then community set COMM-IXSP-DENY-G8
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-WKVE then community set COMM-IXSP-DENY-ALGAR
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-WKVE then community set COMM-IXSP-DENY-PARTICIPANTES
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-TRANSITOS_ALL from community COMMUNITY-ISPs
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then community set COMM-IXSP-DENY-G8
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then community set COMM-IXSP-DENY-ALGAR
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then community set COMM-IXSP-DENY-PARTICIPANTES
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP term PERMIT-PREFIX-TRANSITOS_ALL then accept
+set policy-options policy-statement OUT-eBGP-IPv6-IXSP then reject
+set policy-options policy-statement OUT-eBGP-IPv6-LINKBRASIL term DENY-ALL then reject
+deactivate policy-options policy-statement OUT-eBGP-IPv6-LINKBRASIL term DENY-ALL
+set policy-options policy-statement OUT-eBGP-IPv6-LINKBRASIL term PERMIT-PREFIX-WKVE from family inet6
+set policy-options policy-statement OUT-eBGP-IPv6-LINKBRASIL term PERMIT-PREFIX-WKVE from route-filter 2804:14::/32 exact
+set policy-options policy-statement OUT-eBGP-IPv6-LINKBRASIL term PERMIT-PREFIX-WKVE then accept
+set policy-options policy-statement OUT-eBGP-IPv6-LINKBRASIL then reject
+set policy-options policy-statement OUT-iBGP-IPv4-FULLROUTING term export-ebgp from protocol bgp
+set policy-options policy-statement OUT-iBGP-IPv4-FULLROUTING term export-ebgp from community COMMUNITY-UPLINKs
+set policy-options policy-statement OUT-iBGP-IPv4-FULLROUTING term export-ebgp then next-hop self
+set policy-options policy-statement OUT-iBGP-IPv4-FULLROUTING term export-ebgp then accept
+set policy-options policy-statement OUT-iBGP-IPv4-FULLROUTING then reject
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-gateway from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-gateway then next-hop 189.76.208.253
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-gateway then accept
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-bgp from protocol bgp
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-bgp from as-path local-as
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-bgp then accept
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-static from protocol static
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-static from prefix-list NetworkBGP-Prefixes
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-static then accept
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-networks from protocol direct
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-networks from prefix-list NetworkBGP-Prefixes
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-networks then accept
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-downstream from community COMMUNITY-ISPs
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-downstream then accept
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-downstream-cdns from community COMMUNITY-ISP-CDNs
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE term export-downstream-cdns then accept
+set policy-options policy-statement OUT-iBGP-IPv4-WKVE then reject
+set policy-options policy-statement OUT-iBGP-IPv6-FULLROUTING term export-v6-ebgp from protocol bgp
+set policy-options policy-statement OUT-iBGP-IPv6-FULLROUTING term export-v6-ebgp from community COMMUNITY-UPLINKs
+set policy-options policy-statement OUT-iBGP-IPv6-FULLROUTING term export-v6-ebgp then next-hop self
+set policy-options policy-statement OUT-iBGP-IPv6-FULLROUTING term export-v6-ebgp then accept
+set policy-options policy-statement OUT-iBGP-IPv6-FULLROUTING then reject
+set policy-options policy-statement default-originate term gateway from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement default-originate term gateway then accept
+set policy-options policy-statement default-originate then reject
+set policy-options community COMM-IXSP-ALGAR members target:28329:16735
+set policy-options community COMM-IXSP-ALLOW-AKAMAI members 65001:20940
+set policy-options community COMM-IXSP-ALLOW-ALGAR members target:65001:16735
+set policy-options community COMM-IXSP-ALLOW-AMAZON members 65001:16509
+set policy-options community COMM-IXSP-ALLOW-BRASILSITEINFO members 65001:53243
+set policy-options community COMM-IXSP-ALLOW-CACHEFLY members 65001:30081
+set policy-options community COMM-IXSP-ALLOW-CDNETWORKS members 65001:36408
+set policy-options community COMM-IXSP-ALLOW-CLOUDFLARE members 65001:13335
+set policy-options community COMM-IXSP-ALLOW-COELHOTEC members target:65001:264525
+set policy-options community COMM-IXSP-ALLOW-DINAMICA members 65001:28173
+set policy-options community COMM-IXSP-ALLOW-ELONET members 65001:28125
+set policy-options community COMM-IXSP-ALLOW-FACEBOOK members 65001:32934
+set policy-options community COMM-IXSP-ALLOW-GLOBO members 65001:28604
+set policy-options community COMM-IXSP-ALLOW-GLOBO.COM members 65001:28604
+set policy-options community COMM-IXSP-ALLOW-GOBTELECOM members target:65001:263837
+set policy-options community COMM-IXSP-ALLOW-GOOGLE members 65001:15169
+set policy-options community COMM-IXSP-ALLOW-HIGHWINDS members 65001:12989
+set policy-options community COMM-IXSP-ALLOW-HOSTREVENDA members 65001:28216
+set policy-options community COMM-IXSP-ALLOW-ICANN members 65001:20144
+set policy-options community COMM-IXSP-ALLOW-ITAU members 65001:15256
+set policy-options community COMM-IXSP-ALLOW-IX members 65001:20121
+set policy-options community COMM-IXSP-ALLOW-LEVELUP members 65001:28588
+set policy-options community COMM-IXSP-ALLOW-LINKEDIN members 65001:14413
+set policy-options community COMM-IXSP-ALLOW-MATRIX members 65001:10733
+set policy-options community COMM-IXSP-ALLOW-MAXIHOST members target:65001:262287
+set policy-options community COMM-IXSP-ALLOW-NETFLIX members 65001:2906
+set policy-options community COMM-IXSP-ALLOW-NICBR members 65001:11644
+set policy-options community COMM-IXSP-ALLOW-NICBR members 65001:11752
+set policy-options community COMM-IXSP-ALLOW-NICBR members 65001:12136
+set policy-options community COMM-IXSP-ALLOW-NICBR members 65001:14650
+set policy-options community COMM-IXSP-ALLOW-NOVONET members target:65001:262828
+set policy-options community COMM-IXSP-ALLOW-REGISTROBR members 65001:22548
+set policy-options community COMM-IXSP-ALLOW-RIOTGAMES members 65001:6507
+set policy-options community COMM-IXSP-ALLOW-RIPE members 65001:12654
+set policy-options community COMM-IXSP-ALLOW-RNP members 65001:1916
+set policy-options community COMM-IXSP-ALLOW-SIMET members 65001:14026
+set policy-options community COMM-IXSP-ALLOW-SINGULARCDN members target:65001:266390
+set policy-options community COMM-IXSP-ALLOW-SOFTLAYER members 65001:36351
+set policy-options community COMM-IXSP-ALLOW-TELBRAX members 65001:28250
+set policy-options community COMM-IXSP-ALLOW-TERREMARK members 65001:28625
+set policy-options community COMM-IXSP-ALLOW-TRANSITBRASIL members 65001:22177
+set policy-options community COMM-IXSP-ALLOW-TWITCH members 65001:46489
+set policy-options community COMM-IXSP-ALLOW-TWITTER members 65001:13414
+set policy-options community COMM-IXSP-ALLOW-UPX members 65001:52863
+set policy-options community COMM-IXSP-ALLOW-VIPREDE members 65001:28323
+set policy-options community COMM-IXSP-ALLOW-WORDPRESS members 65001:2635
+set policy-options community COMM-IXSP-ALLOW-YAHOO members 65001:10310
+set policy-options community COMM-IXSP-BRASILSITEINFO members 26162:53243
+set policy-options community COMM-IXSP-CENTURY members 26162:21574
+set policy-options community COMM-IXSP-COELHOTEC members target:26162:264525
+set policy-options community COMM-IXSP-DENY-ALGAR members target:65000:16735
+set policy-options community COMM-IXSP-DENY-G8 members 65000:28329
+set policy-options community COMM-IXSP-DENY-GOBTELECOM members target:65000:263837
+set policy-options community COMM-IXSP-DENY-PARTICIPANTES members 65000:28125
+set policy-options community COMM-IXSP-DENY-PARTICIPANTES members 65000:53243
+set policy-options community COMM-IXSP-DENY-PARTICIPANTES members target:65000:264525
+set policy-options community COMM-IXSP-DENY-PARTICIPANTES members 65000:11835
+set policy-options community COMM-IXSP-DENY-PARTICIPANTES members target:65000:263837
+set policy-options community COMM-IXSP-DENY-PARTICIPANTES members target:65000:271432
+set policy-options community COMM-IXSP-ELONET members 26162:28125
+set policy-options community COMM-IXSP-ELONET members 28329:28125
+set policy-options community COMM-IXSP-GOBTELECOM members target:26162:263837
+set policy-options community COMM-IXSP-IBITTELECOM members target:26162:262365
+set policy-options community COMMUNITY-AKINET members 28360:530
+set policy-options community COMMUNITY-ALL members *:*
+set policy-options community COMMUNITY-BLACKHOLE members 28360:666
+set policy-options community COMMUNITY-BLACKHOLE_G8 members 28329:666
+set policy-options community COMMUNITY-CENIBRA members 28360:517
+set policy-options community COMMUNITY-CENTURY members 28360:513
+set policy-options community COMMUNITY-CLIENTES members 28360:1010
+set policy-options community COMMUNITY-ENS members 28360:510
+set policy-options community COMMUNITY-G8 members 28360:28329
+set policy-options community COMMUNITY-GERENCIA members 28360:1019
+set policy-options community COMMUNITY-IATIVATELECOM members 28360:518
+set policy-options community COMMUNITY-IBITTELECOM members 28360:519
+set policy-options community COMMUNITY-ISP-CDNs members 28360:15
+set policy-options community COMMUNITY-ISPs members 28360:10
+set policy-options community COMMUNITY-IXSO members 28360:26162
+set policy-options community COMMUNITY-IXSP members 28360:26162
+set policy-options community COMMUNITY-LINKBRASIL members 28360:27125
+set policy-options community COMMUNITY-MITIGA-ALGAR members 28360:668
+set policy-options community COMMUNITY-MITIGA-G8 members 28360:667
+set policy-options community COMMUNITY-MITIGACAO_G8 members 28239:6661
+set policy-options community COMMUNITY-SAMIRNET members 28360:522
+set policy-options community COMMUNITY-SAMM members 28360:52551
+set policy-options community COMMUNITY-SUACUINET members 28360:526
+set policy-options community COMMUNITY-UPLINKs members 28360:9
+set policy-options community no-export members no-export
+set policy-options as-path local-as "()"
+set policy-options as-path ASPATH-IBITTELECOM ".* 262365+"
+set policy-options as-path ASPATH-BKPNET ".* 263099+ .*"
+set policy-options as-path ASPATH-SECRELNET ".* 11921+"
+set policy-options as-path ASPATH-AKAMAI ".* 16625+"
+set policy-options as-path ASPATH-METRONW ".* 61571 +"
+set firewall family inet filter PROTECT-RE term aceita-bgp from source-prefix-list bgp-peers
+set firewall family inet filter PROTECT-RE term aceita-bgp from destination-prefix-list ipv4-interfaces
+set firewall family inet filter PROTECT-RE term aceita-bgp from protocol tcp
+set firewall family inet filter PROTECT-RE term aceita-bgp from port bgp
+set firewall family inet filter PROTECT-RE term aceita-bgp then accept
+set firewall family inet filter PROTECT-RE term aceita-ospf from source-prefix-list ipv4-interfaces
+set firewall family inet filter PROTECT-RE term aceita-ospf from destination-prefix-list ipv4-interfaces
+set firewall family inet filter PROTECT-RE term aceita-ospf from destination-prefix-list ospf
+set firewall family inet filter PROTECT-RE term aceita-ospf from protocol ospf
+set firewall family inet filter PROTECT-RE term aceita-ospf then count accept-ospf
+set firewall family inet filter PROTECT-RE term aceita-ospf then accept
+set firewall family inet filter PROTECT-RE term aceita-rsvp from protocol rsvp
+set firewall family inet filter PROTECT-RE term aceita-rsvp then accept
+set firewall family inet filter PROTECT-RE term aceita-dst-ldp from destination-prefix-list ldp-multicast
+set firewall family inet filter PROTECT-RE term aceita-dst-ldp from destination-prefix-list local-loopback
+set firewall family inet filter PROTECT-RE term aceita-dst-ldp from protocol udp
+set firewall family inet filter PROTECT-RE term aceita-dst-ldp from protocol tcp
+set firewall family inet filter PROTECT-RE term aceita-dst-ldp from destination-port 646
+set firewall family inet filter PROTECT-RE term aceita-dst-ldp then accept
+set firewall family inet filter PROTECT-RE term aceita-src-ldp from destination-prefix-list ldp-multicast
+set firewall family inet filter PROTECT-RE term aceita-src-ldp from destination-prefix-list local-loopback
+set firewall family inet filter PROTECT-RE term aceita-src-ldp from protocol udp
+set firewall family inet filter PROTECT-RE term aceita-src-ldp from protocol tcp
+set firewall family inet filter PROTECT-RE term aceita-src-ldp from source-port 646
+set firewall family inet filter PROTECT-RE term aceita-src-ldp then accept
+set firewall family inet filter PROTECT-RE term aceita-lsp-ping from destination-prefix-list local-loopback
+set firewall family inet filter PROTECT-RE term aceita-lsp-ping from protocol udp
+set firewall family inet filter PROTECT-RE term aceita-lsp-ping from protocol tcp
+set firewall family inet filter PROTECT-RE term aceita-lsp-ping from source-port 3503
+set firewall family inet filter PROTECT-RE term aceita-lsp-ping then accept
+set firewall family inet filter PROTECT-RE term aceita-snmp from source-prefix-list snmp-servers
+set firewall family inet filter PROTECT-RE term aceita-snmp from protocol udp
+set firewall family inet filter PROTECT-RE term aceita-snmp from destination-port 161
+set firewall family inet filter PROTECT-RE term aceita-snmp then policer limit-1m
+set firewall family inet filter PROTECT-RE term aceita-snmp then accept
+set firewall family inet filter PROTECT-RE term radius from source-address 189.76.208.98/32
+set firewall family inet filter PROTECT-RE term radius then accept
+set firewall family inet filter PROTECT-RE term aceita-ntp from source-prefix-list ntp-servers
+set firewall family inet filter PROTECT-RE term aceita-ntp from source-prefix-list localhost-ntp
+set firewall family inet filter PROTECT-RE term aceita-ntp from protocol udp
+set firewall family inet filter PROTECT-RE term aceita-ntp from destination-port ntp
+set firewall family inet filter PROTECT-RE term aceita-ntp then policer limit-32k
+set firewall family inet filter PROTECT-RE term aceita-ntp then accept
+set firewall family inet filter PROTECT-RE term aceita-icmp from icmp-type echo-request
+set firewall family inet filter PROTECT-RE term aceita-icmp from icmp-type echo-reply
+set firewall family inet filter PROTECT-RE term aceita-icmp from icmp-type unreachable
+set firewall family inet filter PROTECT-RE term aceita-icmp from icmp-type time-exceeded
+set firewall family inet filter PROTECT-RE term aceita-icmp from icmp-type timestamp-reply
+set firewall family inet filter PROTECT-RE term aceita-icmp from icmp-type timestamp
+set firewall family inet filter PROTECT-RE term aceita-icmp then policer limit-10m
+set firewall family inet filter PROTECT-RE term aceita-icmp then accept
+set firewall family inet filter PROTECT-RE term aceita-traceroute from protocol udp
+set firewall family inet filter PROTECT-RE term aceita-traceroute from destination-port 33434-33523
+set firewall family inet filter PROTECT-RE term aceita-traceroute then accept
+set firewall family inet filter PROTECT-RE term aceita-ssh-out from protocol tcp
+set firewall family inet filter PROTECT-RE term aceita-ssh-out from source-port ssh
+set firewall family inet filter PROTECT-RE term aceita-ssh-out then policer limit-1m
+set firewall family inet filter PROTECT-RE term aceita-ssh-out then accept
+set firewall family inet filter PROTECT-RE term aceita-ssh from source-prefix-list AllowServices
+set firewall family inet filter PROTECT-RE term aceita-ssh from destination-port ssh
+set firewall family inet filter PROTECT-RE term aceita-ssh then accept
+set firewall family inet filter PROTECT-RE term tcp-estabelecidas from protocol tcp
+set firewall family inet filter PROTECT-RE term tcp-estabelecidas from destination-port ssh
+set firewall family inet filter PROTECT-RE term tcp-estabelecidas from destination-port bgp
+set firewall family inet filter PROTECT-RE term tcp-estabelecidas from tcp-established
+set firewall family inet filter PROTECT-RE term tcp-estabelecidas then policer limit-10m
+set firewall family inet filter PROTECT-RE term tcp-estabelecidas then accept
+set firewall family inet filter PROTECT-RE term descarta-resto then discard
+set firewall family inet6 filter PROTECTv6-RE term aceita-bgpv6 apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-bgpv6 from source-prefix-list bgpv6-peers
+set firewall family inet6 filter PROTECTv6-RE term aceita-bgpv6 from destination-prefix-list ipv6-interfaces
+set firewall family inet6 filter PROTECTv6-RE term aceita-bgpv6 from next-header tcp
+set firewall family inet6 filter PROTECTv6-RE term aceita-bgpv6 from port bgp
+set firewall family inet6 filter PROTECTv6-RE term aceita-bgpv6 then accept
+set firewall family inet6 filter PROTECTv6-RE term aceita-ospf3 apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-ospf3 from source-prefix-list link-localv6
+set firewall family inet6 filter PROTECTv6-RE term aceita-ospf3 from next-header ospf
+set firewall family inet6 filter PROTECTv6-RE term aceita-ospf3 then accept
+set firewall family inet6 filter PROTECTv6-RE term aceita-multicastv6 apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-multicastv6 from source-prefix-list link-localv6
+set firewall family inet6 filter PROTECTv6-RE term aceita-multicastv6 from destination-prefix-list multicastv6
+set firewall family inet6 filter PROTECTv6-RE term aceita-multicastv6 then accept
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from next-header icmp6
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type echo-reply
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type echo-request
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type time-exceeded
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type router-advertisement
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type parameter-problem
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type destination-unreachable
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type packet-too-big
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type router-solicit
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type neighbor-solicit
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type neighbor-advertisement
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 from icmp-type redirect
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 then policer limit-1m
+set firewall family inet6 filter PROTECTv6-RE term aceita-icmpv6 then accept
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-udp apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-udp from destination-prefix-list locals-v6
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-udp from next-header udp
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-udp from destination-port 33434-33450
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-udp from hop-limit 1
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-udp then policer limit-1m
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-udp then accept
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-tcp apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-tcp from destination-prefix-list locals-v6
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-tcp from next-header tcp
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-tcp from destination-port 33434-33450
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-tcp from hop-limit 1
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-tcp then policer limit-1m
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-tcp then accept
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from destination-prefix-list locals-v6
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from next-header icmp6
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type echo-reply
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type echo-request
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type time-exceeded
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type router-advertisement
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type parameter-problem
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type destination-unreachable
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type packet-too-big
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type router-solicit
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type neighbor-solicit
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type neighbor-advertisement
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from icmp-type redirect
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp from hop-limit 1
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp then policer limit-1m
+set firewall family inet6 filter PROTECTv6-RE term aceita-traceroutev6-icmp then accept
+set firewall family inet6 filter PROTECTv6-RE term aceita-dnsv6 apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term aceita-dnsv6 from source-prefix-list dns-serversv6
+set firewall family inet6 filter PROTECTv6-RE term aceita-dnsv6 from destination-prefix-list locals-v6
+set firewall family inet6 filter PROTECTv6-RE term aceita-dnsv6 from next-header udp
+set firewall family inet6 filter PROTECTv6-RE term aceita-dnsv6 from source-port 53
+set firewall family inet6 filter PROTECTv6-RE term aceita-dnsv6 then policer limit-1m
+set firewall family inet6 filter PROTECTv6-RE term aceita-dnsv6 then accept
+set firewall family inet6 filter PROTECTv6-RE term descarta-restov6 apply-flags omit
+set firewall family inet6 filter PROTECTv6-RE term descarta-restov6 then count discard-v6
+set firewall family inet6 filter PROTECTv6-RE term descarta-restov6 then log
+set firewall family inet6 filter PROTECTv6-RE term descarta-restov6 then discard
+set firewall policer limit-32k if-exceeding bandwidth-limit 32k
+set firewall policer limit-32k if-exceeding burst-size-limit 15k
+set firewall policer limit-32k then discard
+set firewall policer ARP-Policer if-exceeding bandwidth-limit 1m
+set firewall policer ARP-Policer if-exceeding burst-size-limit 15k
+set firewall policer ARP-Policer then discard
+set firewall policer limit-1m if-exceeding bandwidth-limit 1m
+set firewall policer limit-1m if-exceeding burst-size-limit 15k
+set firewall policer limit-1m then discard
+set firewall policer limit-10m if-exceeding bandwidth-limit 10m
+set firewall policer limit-10m if-exceeding burst-size-limit 625k
+set firewall policer limit-10m then discard
+set firewall policer limit-3m if-exceeding bandwidth-limit 3m
+set firewall policer limit-3m if-exceeding burst-size-limit 15k
+set firewall policer limit-3m then discard
+set firewall policer limit-100k if-exceeding bandwidth-limit 100k
+set firewall policer limit-100k if-exceeding burst-size-limit 15k
+set firewall policer limit-100k then discard
+
+backup@SP-BRE-MX204-EQUINIX> quit 
+
+Connection to 189.76.208.253 closed.
+
+Backup criado com sucesso!
